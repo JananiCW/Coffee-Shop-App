@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:contentDescription="@string/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/coffee13" />
+
+    <!-- Semi-transparent overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:contentDescription="@string/back"
+            android:id="@+id/backBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/category_bg_selected"
+            android:padding="10dp"
+            android:src="@drawable/back_icon"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/myFav"
+            android:textColor="@color/creamBackground"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:contentDescription="@string/back"
+            android:id="@+id/cartBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/category_bg_selected"
+            android:padding="10dp"
+            android:src="@drawable/cart_icon"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <!-- Favorites Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favoritesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Empty Favorites Message -->
+    <LinearLayout
+        android:id="@+id/emptyFavoritesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:contentDescription="@string/back"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/heart_icon"
+            app:tint="@color/lightBrown" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/noFav"
+            android:textColor="@color/lightBrown"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/startAdd"
+            android:textColor="@color/lightBrown"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</FrameLayout>
